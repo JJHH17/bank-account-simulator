@@ -10,10 +10,7 @@ public class Main {
         System.out.println("Please enter your name: ");
         String name = input.nextLine();
 
-        System.out.println("Please enter your initial bank balance: ");
-        int initBalance = Integer.parseInt(input.nextLine());
-
-        var newUser = new BankAccount(name, initBalance);
+        var newUser = new BankAccount(name);
 
         while (true) {
             System.out.println("View Balance | Deposit | Withdraw | quit");
