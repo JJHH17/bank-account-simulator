@@ -28,7 +28,7 @@ public class Main {
                 case "deposit":
                     System.out.println("How much do you want to despoit?");
                     int depositAmount = Integer.parseInt(input.nextLine());
-                    newUser.desposit(depositAmount);
+                    newUser.deposit(depositAmount);
                     break;
                 case "withdraw":
                     System.out.println("How much do you want to withdraw?");
