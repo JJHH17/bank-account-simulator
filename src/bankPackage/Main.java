@@ -1,5 +1,7 @@
 package bankPackage;
+import java.security.InvalidParameterException;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,16 +27,29 @@ public class Main {
                 case "view":
                     newUser.getBalance();
                     break;
+
                 case "deposit":
-                    System.out.println("How much do you want to despoit?");
-                    int depositAmount = Integer.parseInt(input.nextLine());
-                    newUser.deposit(depositAmount);
-                    break;
+                    System.out.println("How much do you want to deposit?");
+                    try {
+                        int depositAmount = Integer.parseInt(input.nextLine());
+                        newUser.deposit(depositAmount);
+                        break;
+                    } catch (NumberFormatException e) {
+                        System.out.println("Please enter a valid entry.");
+                        break;
+                    }
+
                 case "withdraw":
                     System.out.println("How much do you want to withdraw?");
-                    int withdrawAmount = Integer.parseInt(input.nextLine());
-                    newUser.withdraw(withdrawAmount);
-                    break;
+                    try {
+                        int withdrawAmount = Integer.parseInt(input.nextLine());
+                        newUser.withdraw(withdrawAmount);
+                        break;
+                    } catch (NumberFormatException e) {
+                        System.out.println("Please enter a valid entry.");
+                        break;
+                    }
+
                 default:
                     System.out.println("Please enter a valid entry.");
             }
