@@ -24,10 +24,19 @@ public class Main {
             switch (userInput.toLowerCase()) {
                 case "view":
                     newUser.getBalance();
+                    break;
                 case "deposit":
                     System.out.println("How much do you want to despoit?");
                     int depositAmount = Integer.parseInt(input.nextLine());
                     newUser.desposit(depositAmount);
+                    break;
+                case "withdraw":
+                    System.out.println("How much do you want to withdraw?");
+                    int withdrawAmount = Integer.parseInt(input.nextLine());
+                    newUser.withdraw(withdrawAmount);
+                    break;
+                default:
+                    System.out.println("Please enter a valid entry.");
             }
         }
     }
